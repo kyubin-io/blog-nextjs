@@ -1,12 +1,20 @@
 import Image from "next/image";
 
+type Post = {
+  title: "string";
+  description: "string";
+  date: "string";
+  category: "string";
+  path: "string";
+};
+
 export default function Card({
   title,
   description,
   date,
   category,
   path,
-}: any) {
+}: Post) {
   return (
     <div className="w-72 h-80 text-center shadow-lg hover:scale-105 duration-150">
       <div className="relative w-72 h-48">
