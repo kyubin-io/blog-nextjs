@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const sans = Open_Sans({ subsets: ["latin"] });
 
@@ -17,28 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={sans.className}>
-      <body className="pl-8 pr-8 min-h-screen">
-        <header className="flex justify-between items-center h-16 sticky top-0">
-          <h1 className="text-xl">KYUBIN's Blog</h1>
-          <nav>
-            <Link className="ml-4" href="/home">
-              Home
-            </Link>
-            <Link className="ml-4" href="/about">
-              About
-            </Link>
-            <Link className="ml-4" href="/posts">
-              Posts
-            </Link>
-            <Link className="ml-4" href="/contact">
-              Contact
-            </Link>
-          </nav>
-        </header>
-        {children}
-        <footer className="flex justify-center h-8 sticky bottom-0">
-          All Right Reserved.
-        </footer>
+      <body className="flex flex-col w-full max-w-screen-2xl mx-auto">
+        <Header />
+        <main className="grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
