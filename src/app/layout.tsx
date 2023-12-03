@@ -18,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={sans.className}>
       <body className="pl-8 pr-8 min-h-screen">
-        <header className="flex justify-between h-16">
-          <div>KYUBIN's Blog</div>
+        <header className="flex justify-between items-center h-16 sticky top-0">
+          <h1 className="text-xl">KYUBIN's Blog</h1>
           <nav>
             <Link className="ml-4" href="/home">
               Home
