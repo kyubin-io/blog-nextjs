@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Profile from "./components/Profile";
+import Hero from "../components/Hero";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <section className="">
-      <Profile />
-    </section>
+    <>
+      <Hero />
+    </>
   );
 }
