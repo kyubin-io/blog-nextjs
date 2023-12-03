@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profileImage from "../../../public/images/profile.jpeg";
+import profileImage from "../../public/images/profile.jpeg";
 import Link from "next/link";
 
 export default function Hero() {
