@@ -12,7 +12,7 @@ export default function Profile() {
         alt="profile"
         priority
       />
-      <h2 className="text-2xl font-bold">Hi, I'm Kyubin</h2>
+      <h2 className="text-2xl font-bold">{`Hi, I'm Kyubin`}</h2>
       <h3 className="font-semibold">Full-stack Engineer</h3>
       <h3 className="">꿈을 코딩하는 사람</h3>
       <button className="bg-amber-400 px-2 py-1 cursor-pointer rounded-lg">
