@@ -8,10 +8,7 @@ export default function PostGrid({ posts }: Props) {
     <ul className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {posts.map((post) => {
         return (
-          <li
-            key={post.path}
-            className="rounded-md overflow-hidden text-center shadow-lg hover:scale-105 duration-150"
-          >
+          <li key={post.path}>
             <Card post={post} />
           </li>
         );

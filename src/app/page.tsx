@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
-import FeaturedPost from "@/components/FeaturedPost";
-import YouMayLike from "@/components/YouMayLike";
+import FeaturedPosts from "@/components/FeaturedPosts";
+import CarouselPosts from "@/components/CarouselPosts";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <FeaturedPost />
-      <YouMayLike />
+      <FeaturedPosts />
+      <CarouselPosts />
     </>
   );
 }
