@@ -10,11 +10,14 @@ export default function Card({
   post: { title, description, date, category, path },
 }: Props) {
   return (
-    <article className="rounded-md overflow-hidden text-center shadow-lg hover:scale-105 duration-150">
-      <Link href={`/posts/${path}`}>
-        <div className="relative w-full h-48">
-          <Image src={`/images/posts/${path}.png`} alt={title} fill />
-        </div>
+    <Link href={`/posts/${path}`}>
+      <article className="rounded-md overflow-hidden text-center shadow-lg hover:scale-105 duration-150">
+        <Image
+          src={`/images/posts/${path}.png`}
+          alt={title}
+          width={300}
+          height={200}
+        />
         <p className="text-sm text-right pr-2 text-gray-700">
           {date.toString()}
         </p>
@@ -23,7 +26,7 @@ export default function Card({
         <button className="text-sm bg-cyan-200 px-2 py-1 rounded-lg m-2">
           {category}
         </button>
-      </Link>
-    </article>
+      </article>
+    </Link>
   );
 }
