@@ -39,3 +39,12 @@ export async function getPostData(fileName: string): Promise<PostData> {
   const content = await readFile(filePath, "utf-8");
   return { ...metadata, content };
 }
+
+export async function getFBData(fileName: string) {
+  const metadata = await getPostData(fileName);
+  const all = await getAllPosts();
+  const index = all.findIndex((post) => post.path === metadata.path);
+  console.log("index =>>>>>>>>>>>", index);
+  console.log(all[index - 1]);
+  return [all[index - 1], all[index + 1]];
+}

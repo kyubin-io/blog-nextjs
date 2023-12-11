@@ -1,4 +1,5 @@
 import MarkdownViewer from "@/components/MarkdownViewer";
+import PostCards from "@/components/PostCards";
 import { getPostData } from "@/service/posts";
 import Image from "next/image";
 import { AiTwotoneCalendar } from "react-icons/ai";
@@ -30,6 +31,7 @@ export default async function PostPage({ params: { slug } }: Props) {
         <p className="text-xl font-bold">{description}</p>
         <div className="w-44 border-2 border-sky-600 mt-4 mb-8" />
         <MarkdownViewer content={content} />
+        <PostCards path={path} />
       </section>
     </article>
   );
