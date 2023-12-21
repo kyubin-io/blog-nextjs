@@ -1,5 +1,4 @@
 import MarkdownViewer from "@/components/MarkdownViewer";
-import PostCards from "@/components/PostCards";
 import { PostData } from "@/service/posts";
 import { AiTwotoneCalendar } from "react-icons/ai";
 
@@ -15,7 +14,6 @@ export default function PostContent({ post }: { post: PostData }) {
       <p className="text-xl font-bold">{description}</p>
       <div className="w-44 border-2 border-sky-600 mt-4 mb-8" />
       <MarkdownViewer content={content} />
-      <PostCards path={path} />
     </section>
   );
 }
