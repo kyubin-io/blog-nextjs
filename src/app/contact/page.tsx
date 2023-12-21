@@ -1,11 +1,12 @@
 import ContactMe from "@/components/ContactMe";
-import EmailForm from "@/components/EmailForm";
+import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col items-center">
+    <section className="flex flex-col items-center">
       <ContactMe />
-      <EmailForm />
-    </div>
+      <h2 className="text-3xl font-bold my-8">Or Send me an email</h2>
+      <ContactForm />
+    </section>
   );
 }

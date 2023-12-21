@@ -5,7 +5,7 @@ const H2_CLASS = "text-2xl font-bold";
 
 export default function AboutPage() {
   return (
-    <div>
+    <>
       <Profile />
       <section className="w-full bg-slate-200 flex flex-col items-center py-8 shadow-md mt-8">
         <div className={CONTENT_CLASS}>
@@ -27,6 +27,6 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-    </div>
+    </>
   );
 }
