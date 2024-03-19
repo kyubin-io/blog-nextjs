@@ -1,7 +1,7 @@
 "use client";
 
 const H3_CLASS = "text-white font-bold";
-const INPUT_CLASS = "mb-2 placeholder:text-black";
+const INPUT_CLASS = "mb-2 px-1 placeholder:text-black";
 
 export default function EmailForm() {
   const handleClick = (e) => {
