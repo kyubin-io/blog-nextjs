@@ -1,31 +1,64 @@
 "use client";
 
-const H3_CLASS = "text-white font-bold";
-const INPUT_CLASS = "mb-2 px-1 placeholder:text-black";
+import { ChangeEvent, FormEvent, useState } from "react";
+
+type Form = {
+  from: string;
+  subject: string;
+  message: string;
+};
 
 export default function EmailForm() {
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log(e);
+  const [form, setForm] = useState<Form>({
+    from: "",
+    subject: "",
+    message: "",
+  });
+
+  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
+
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(form);
+  };
+
   return (
-    <form className="w-[500px] bg-slate-500 flex flex-col rounded-lg p-4">
-      <h3 className={H3_CLASS}>Your Email</h3>
-      <input type="text" placeholder="Email" className={INPUT_CLASS} />
-      <h3 className={H3_CLASS}>Subject</h3>
-      <input type="text" placeholder="Hello" className={INPUT_CLASS} />
-      <h3 className={H3_CLASS}>Message</h3>
-      <textarea
-        placeholder="Message"
-        className={`${INPUT_CLASS} h-40`}
-      ></textarea>
-      <button
-        type="submit"
-        className="text-black font-bold bg-yellow-400"
-        onClick={handleClick}
-      >
-        Submit
-      </button>
-    </form>
+    <>
+      <form onSubmit={onSubmit}>
+        <label htmlFor="from">Your Email</label>
+        <input
+          type="email"
+          id="from"
+          name="from"
+          required
+          autoFocus
+          value={form.from}
+          onChange={onChange}
+        />
+        <label htmlFor="subject">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          required
+          value={form.subject}
+          onChange={onChange}
+        />
+
+        <label htmlFor="message">Message</label>
+        <textarea
+          rows={10}
+          id="message"
+          name="message"
+          required
+          value={form.message}
+          onChange={onChange}
+        />
+        <button>Submit</button>
+      </form>
+    </>
   );
 }
