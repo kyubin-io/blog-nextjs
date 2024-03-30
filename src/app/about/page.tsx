@@ -17,7 +17,7 @@ export default function AboutPage() {
           <h2 className={H2_CLASS}>Career</h2>
           <ul>
             <li>Gaon Platform(2020-2023)</li>
-            <li>Gaon Platform(2017-2018)</li>
+            <li>Innogen(2017-2018)</li>
           </ul>
         </div>
         <div className={CONTENT_CLASS}>
