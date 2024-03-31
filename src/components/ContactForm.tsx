@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import Banner, { BannerData } from "./Banner";
+import { sendContactEmail } from "@/service/contact";
 
 type Form = {
   from: string;
@@ -9,12 +10,14 @@ type Form = {
   message: string;
 };
 
+const DEFAULT_DATA = {
+  from: "",
+  subject: "",
+  message: "",
+};
+
 export default function EmailForm() {
-  const [form, setForm] = useState<Form>({
-    from: "",
-    subject: "",
-    message: "",
-  });
+  const [form, setForm] = useState<Form>(DEFAULT_DATA);
   const [banner, setBanner] = useState<BannerData | null>(null);
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -23,11 +26,19 @@ export default function EmailForm() {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(form);
-    setBanner({ message: "Succeed", state: "success" });
-    setTimeout(() => {
-      setBanner(null);
-    }, 3000);
+    sendContactEmail(form)
+      .then(() => {
+        setBanner({ message: "Succeed", state: "success" });
+        setForm(DEFAULT_DATA);
+      })
+      .catch(() => {
+        setBanner({ message: "Failed", state: "error" });
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setBanner(null);
+        }, 3000);
+      });
   };
 
   return (
