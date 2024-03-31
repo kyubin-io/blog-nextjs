@@ -1,3 +1,4 @@
+import { sendEmail } from "@/service/email";
 import * as yup from "yup";
 
 const bodySchema = yup.object().shape({
@@ -7,8 +8,21 @@ const bodySchema = yup.object().shape({
 });
 
 export async function POST(req: Request) {
-  if (bodySchema.isValidSync(req.body)) {
-    return new Response("Invalid Foramt", { status: 400 });
+  const body = await req.json();
+  if (bodySchema.isValidSync(body)) {
+    return new Response(JSON.stringify({ message: "Failed" }), { status: 400 });
   }
-  const { from, subject, message } = req.body;
+
+  return sendEmail(body)
+    .then(() => {
+      new Response(JSON.stringify({ message: "Succeed" }), {
+        status: 200,
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+      return new Response(JSON.stringify({ message: "Failed" }), {
+        status: 500,
+      });
+    });
 }
