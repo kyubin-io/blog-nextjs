@@ -1,4 +1,10 @@
 import Profile from "@/components/Hero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description: "Career",
+};
 
 const CONTENT_CLASS = "flex flex-col items-center mb-4";
 const H2_CLASS = "text-2xl font-bold";
