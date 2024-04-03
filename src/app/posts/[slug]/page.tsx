@@ -1,4 +1,3 @@
-import MarkdownViewer from "@/components/MarkdownViewer";
 import { getFeaturedPosts, getPostData } from "@/service/posts";
 import { AiTwotoneCalendar } from "react-icons/ai";
 import Image from "next/image";
