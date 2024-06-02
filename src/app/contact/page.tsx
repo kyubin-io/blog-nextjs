@@ -14,7 +14,7 @@ const LINKS = [
   },
   {
     icon: <FaLinkedin />,
-    url: "https://www.linkedin.com/in/kyubin-agnes/",
+    url: "https://www.linkedin.com/in/kyubin-kim-935788293/",
   },
   {
     icon: <FaBlogger />,
