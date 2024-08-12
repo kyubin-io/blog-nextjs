@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const LINKS = [
   {
     icon: <FaGithubSquare />,
-    url: "https://github.com/kyubinAgnes",
+    url: "https://github.com/kyubin-io",
   },
   {
     icon: <FaLinkedin />,
